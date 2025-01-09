@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M CRM - Salud</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-5">
+        <h1 class="display-4">M CRM</h1>
+        <p class="lead">El CRM ideal para la venta de planes de salud</p>
+    </header>
+
+    <!-- Botón de Re contacto -->
+    <section class="text-center py-3">
+        <div class="container-fluid">
+            <span id="re-contacto-button"></span>
+        </div>
+    </section>
+
+    <!-- Sección 1: Tablero de Gestión -->
+    <section class="py-5">
+        <div class="container-fluid">
+            <h2 class="text-center mb-4">Tablero de Gestión</h2>
+            <div id="sheet-container" class="ratio ratio-16x9"></div>
+        </div>
+    </section>
+
+    <!-- Sección 2: Formulario -->
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Formulario</h2>
+        <!-- Botones -->
+        <div class="mb-3">
+            <button id="open-form" class="btn btn-primary me-2">Abrir Formulario</button>
+            <button id="close-form" class="btn btn-secondary">Cerrar</button>
+        </div>
+        <!-- Contenedor del formulario -->
+        <div id="form-container" class="ratio ratio-16x9" style="display: none;">
+            <iframe id="form-iframe" src="https://forms.gle/ThM5jqRhzFcYK6YJ8" style="border: 1px solid #ccc; width: 100%; height: 100%;" frameborder="0"></iframe>
+        </div>
+    </div>
+</section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
