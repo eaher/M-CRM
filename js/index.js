@@ -1,3 +1,6 @@
+// Cargar el botón de Google Calendar al cargar la página
+window.addEventListener('load', loadGoogleCalendarButton);
+
 // Función para mostrar el formulario
 document.getElementById('btnAbrir').addEventListener('click', function () {
     document.getElementById('formContainer').classList.remove('d-none'); // Mostrar formulario
@@ -39,5 +42,29 @@ function loadGoogleCalendarButton() {
     document.body.appendChild(script);
 }
 
-// Cargar el botón de Google Calendar al cargar la página
-window.addEventListener('load', loadGoogleCalendarButton);
+// Función para cargar el iframe con la URL proporcionada
+function cargarIframe(url) {
+    const iframeContainer = document.getElementById('iframeContainer');
+    iframeContainer.innerHTML = `<iframe src="${url}" width="100%" height="600px" frameborder="0"></iframe>`;
+    iframeContainer.classList.remove('d-none'); // Mostrar el contenedor del iframe
+}
+
+// Función para abrir el sheet de "Seguimiento de Gestión"
+document.getElementById('btnSeguimiento').addEventListener('click', function () {
+    cargarIframe('https://docs.google.com/spreadsheets/d/1vvNl1jsEF2wj7ERg88Vf9Fn6v-q1fXkA5UYX8ZrjFGM/edit?gid=2142755371#gid=2142755371');
+});
+
+// Evento para el botón "Historial de Contacto"
+document.getElementById('btnHistorial').addEventListener('click', function () {
+    const seleccion = prompt('Seleccione una vendedora: Ana o Salo').toLowerCase();
+
+    if (seleccion === 'ana') {
+        // Cargar el sheet de Ana incrustado
+        cargarIframe('https://docs.google.com/spreadsheets/d/1HVBDAk7CBVxx1zqCaw3-EAEDQ9-AsBfKUdLU3i8TkJc/edit?gid=2142755371#gid=2142755371');
+    } else if (seleccion === 'salo') {
+        // Cargar el sheet de Salo incrustado
+        cargarIframe('https://docs.google.com/spreadsheets/d/1goZHPheXKXtIxzLdnY-EMlnyKapR__zhQ_Di-s1orWM/edit?gid=2142755371#gid=2142755371');
+    } else {
+        alert('Opción no válida. Por favor, seleccione Ana o Salo.');
+    }
+});
